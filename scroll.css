@@ -1,0 +1,397 @@
+/* FONT FAMILY IMPORTED */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300&display=swap');
+
+/* ==========
+GLOBAL STYLES
+============= */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+
+/* smooth scrolling moving from element to element*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*VARIBLES */
+
+:root {
+    --clr-midnight-blue: rgb(25, 25, 112);
+    --clr-nav-shadow: rgb(128, 128, 128);
+    --clr-darkslate-gray: rgb(47, 79, 79);
+    --clr-desaturated: rgb(14, 125, 125);
+    --clr-lightgrey: rgb(211, 211, 211);
+    --clr-black: rgb(0, 0, 0);
+    --clr-white: rgb(255, 255, 255);
+    --transition: infinite all 3s ease-in-out;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 3rem;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 0.875rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-darkslate-gray)
+}
+
+/* SCREENS > 800PX */
+
+@media screen and (min-width:800px) {
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+}
+
+/* GLOBAL CLASSES */
+
+.btn {
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--clr-black);
+    border: 2px solid var(--clr-black);
+    padding: 0.375rem 0.75rem;
+    letter-spacing: 0.25rem;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.btn:hover {
+    color: var(--clr-white);
+    background: var(--clr-black);
+}
+
+.btn-white {
+    color: var(--clr-white);
+    border-color: var(--clr-white);
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+    color: var(--clr-white);
+    background: var(--clr-black);
+}
+
+
+/* SECTION */
+.section {
+    padding-bottom: 5rem;
+}
+
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+/* SCREENS > 992PX */
+@media screen and (min-width:992px) {
+    .section-center {
+        width: 95vw
+    }
+}
+
+/* main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+} */
+
+/* 
+========
+SCROLL
+======== */
+nav {
+    background: var(--clr-white);
+    padding: 1rem 1.5rem;
+}
+
+/* fixed nav */
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--clr-white);
+    box-shadow: 0 1px 3px var(--clr-nav-shadow);
+}
+
+.fixed-nav .links a {
+    color: var(--clr-darkslate-gray)
+}
+
+.fixed-nav .links a:hover {
+    color: var(--clr-desaturated)
+}
+
+/* IMPORTANT! */
+/* 
+.fixed-nav .links-container {
+    height: auto !important;
+} */
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-toggle {
+    font-size: 1.5rem;
+    color: var(--clr-darkslate-gray);
+    background: transparent;
+    border-color: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+
+}
+
+.links-container {
+    height: 0;
+    overflow: hidden;
+    transition: ease-in-out 0.30s;
+}
+
+.show-links {
+    height: 200px;
+}
+
+.links a {
+    background: var(--clr-white);
+    color: var(--clr-darkslate-gray);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    display: block;
+    transition: var(--transition);
+    padding: 0.75rem 0;
+}
+
+.links a:hover {
+    color: var(--clr-darkslate-gray);
+}
+
+/* SCREENS > 800PX */
+@media screen and (min-width:800px) {
+    nav {
+        background: transparent
+    }
+
+    .nav-center {
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-header {
+        padding: 0;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .links-container {
+        height: auto !important;
+    }
+
+    .links {
+        display: flex;
+    }
+
+    .links a {
+        background: transparent;
+        color: var(--clr-white);
+        font-size: 1.1rem;
+        text-transform: capitalize;
+        letter-spacing: 0.3rem;
+        display: block;
+        transition: var(--transition);
+        margin: 0 1rem;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .links a:hover {
+        color: var(-white);
+    }
+}
+
+/* HERO */
+
+header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)), url(./img/travel-banner.jpeg) center/cover no-repeat;
+}
+
+.banner {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.container h1 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.container p {
+    color: white;
+    max-width: 25rem;
+    margin: 0 auto;
+    margin-bottom: 1.25rem;
+}
+
+/* SCREENS < 768PX */
+@media screen and (min-width: 768px) {
+    .container p {
+        max-width: 40rem;
+    }
+}
+
+/* sections and title */
+
+.title h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title span {
+    color: var(--clr-midnight-blue);
+}
+
+#about,
+#services,
+#tours {
+    height: 80vh;
+}
+
+#services {
+    background: var(--clr-lightgrey);
+}
+
+footer {
+    background: var(--clr-midnight-blue);
+    padding: 5rem 1rem;
+}
+
+footer p {
+    color: var(--clr-white);
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0;
+}
+
+/* AFTER MEDIA QUERY */
+.top-link {
+    position: fixed;
+    right: 2rem;
+    bottom: 13rem;
+    font-size: 2rem;
+    color: var(--clr-desaturated);
+    animation: infinite all 3s ease-in-out;
+    height: 2rem;
+    animation-name: animation;
+    /* visibility: hidden; */
+    visibility: hidden;
+    z-index: -100;
+}
+
+.show-link {
+    visibility: visible;
+    z-index: 100;
+}
+
+/* keyframe animation-up btn */
+@keyframes animation {
+    0% {
+
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+        color: var(--midnight-blue);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
